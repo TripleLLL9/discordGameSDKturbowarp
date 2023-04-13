@@ -5,7 +5,7 @@
 
     // Create a Discord Game SDK application object
     var application = new DiscordGameSDK.Application(
-        CLIENT_ID,
+        1096168692259242054,
         DiscordGameSDK.CreateFlags.Default
     );
 
