@@ -1,7 +1,7 @@
 class discordGameSDK {
 
     var rpc = null;
-    var clientId = 'YOUR_CLIENT_ID_HERE';
+    var clientId = '1096168692259242054';
     var accessToken = null;
     var authenticated = false;
 
