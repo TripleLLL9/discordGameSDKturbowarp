@@ -7,7 +7,7 @@ const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.jso
 
 // Include the discord-gamesdk module as a dependency
 const DiscordGameSDK = Discord.DiscordGameSDK;
-const CLIENT_ID = 'my-client-id';
+const CLIENT_ID = '1096168692259242054';
 
 // Use the Discord Game SDK as needed
 const discord = new DiscordGameSDK(CLIENT_ID, Discord.CreateFlags.Default);
