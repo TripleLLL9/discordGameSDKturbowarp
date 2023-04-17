@@ -1,0 +1,8 @@
+{
+  "name": "my-extension",
+  "version": "1.0.0",
+  "description": "My TurboWarp extension",
+  "dependencies": {
+    "discord-gamesdk": "https://github.com/discord/discord-game-sdk/releases/download/v1.0.1/discord_game_sdk.zip"
+  }
+}
