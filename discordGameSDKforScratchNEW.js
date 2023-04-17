@@ -1,3 +1,17 @@
+const fs = require('fs');
+const path = require('path');
+const Discord = require('discord-gamesdk');
+
+// Read the contents of package.json
+const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8'));
+
+// Include the discord-gamesdk module as a dependency
+const DiscordGameSDK = Discord.DiscordGameSDK;
+const CLIENT_ID = 'my-client-id';
+
+// Use the Discord Game SDK as needed
+const discord = new DiscordGameSDK(CLIENT_ID, Discord.CreateFlags.Default);
+
 class DiscordGameSDK extends ScratchExtension {
   constructor() {
     super('Discord Game SDK', '1.0', 'A TurboWarp extension for the Discord Game SDK');
