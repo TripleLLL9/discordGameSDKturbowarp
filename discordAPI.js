@@ -1,8 +1,4 @@
 class DiscordAPI {
-    const clientID = "1096168692259242054";
-    const redirectURI = "https://triplelll9.wixsite.com/robotiis-adventure/sign-in-successful";
-  }
-
   getInfo() {
     return {
       id: "discordapi",
