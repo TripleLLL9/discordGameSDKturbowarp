@@ -64,4 +64,4 @@ class DiscordGameSDK {
   }
 }
 
-Scratch.extensions.register(new DiscordGameSDKExtension());```
+Scratch.extensions.register(new DiscordGameSDKExtension());
