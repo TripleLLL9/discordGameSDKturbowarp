@@ -11,18 +11,29 @@ class NetworkExample {
           arguments: {
             URL: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'https://example.com',
+              defaultValue: 'https://jsonplaceholder.typicode.com/todos/1'
             }
           }
         },
         {
-          opcode: 'get_element_by_id',
+          opcode: 'getElementById',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'get element by ID [ID]',
+          text: 'get element by id [ID]',
           arguments: {
             ID: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'element-id',
+              defaultValue: 'example-id'
+            }
+          }
+        },
+        {
+          opcode: 'fragmentGet',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'fragment.get [SELECTOR]',
+          arguments: {
+            SELECTOR: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'p'
             }
           }
         }
@@ -31,19 +42,25 @@ class NetworkExample {
   }
 
   fetch(args) {
-    return fetch(args.URL)
-      .then(response => response.text())
-      .then(text => text.slice(0, 100)); // Truncate to first 100 characters
+    const url = args.URL;
+    return fetch(url)
+      .then(response => response.json())
+      .then(json => JSON.stringify(json));
   }
-  
-  get_element_by_id(args) {
+
+  getElementById(args) {
     const id = args.ID;
     const element = document.getElementById(id);
     if (element) {
-      return element.outerHTML;
-    } else {
-      return '';
+      return element.innerText;
     }
+    return '';
+  }
+
+  fragmentGet(args) {
+    const selector = args.SELECTOR;
+    const fragment = new URLSearchParams(window.location.hash.slice(1));
+    return fragment.get(selector);
   }
 }
 
