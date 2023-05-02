@@ -1,6 +1,6 @@
 class ChatGPT {
   constructor() {
-    this.apiKey = '';
+    this.apiKey = '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';
   }
 
   getInfo() {
